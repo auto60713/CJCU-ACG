@@ -1,0 +1,167 @@
+	html,body{	margin: 0px;  }
+
+	body{  height: 4000px;  }
+
+#background{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 2000px;
+	background-image:url(img/background.jpg);
+	z-index: -100;
+}
+
+.fixed{
+	position: fixed;
+}
+/* 一開始在畫面外 */
+.outside{
+    top:100%;
+}
+/* 通用字顏色 */
+.textlight{
+    color: #1A8CCB;
+}
+
+
+img.head{
+	left:5%;
+	max-height: 110%;
+	max-width: 50%;
+}
+img.logo{
+	right:12%;
+	max-height: 70%;
+	max-width: 35%;
+}
+p.logo{
+	right:10%;
+
+	font-size:60px;
+	font-weight: bold;
+	font-family: Microsoft YaHei;
+	text-shadow: 2px 2px 3px #05296E;
+	z-index: 20;
+}
+
+
+img.about{
+	right:6%;
+	max-height: 110%;
+	max-width: 50%;
+}
+p.about{
+	font-size:18px;
+	left:10%;
+	text-shadow: 1px 0px 1px #000000;
+}
+img.stain{
+	left:10%;
+	opacity: 0.5;
+	max-height: 30%;
+}
+
+
+img.video{
+    left: 10%;
+    height: 110%;
+    max-height: 110%;
+}
+img.videoplay{
+    left: 50%;
+    box-shadow: 5px 5px 20px #5B8CCB;
+    opacity: 0.7;
+    max-height: 40%;
+    max-width: 50%;
+}
+p.videocont{
+	font-size:40px;
+	left: 49%;
+	text-shadow: 1px 1px 2px #000000;
+}
+
+/* youtube lightbox */
+#blackback{
+    display : none;
+    position: fixed;
+	height: 100%;
+	width: 100%;
+	background: #000000;
+	z-index: 50;
+}
+#youtube{
+    display : none;
+	position: fixed;
+	z-index: 51;
+    left: 50%;
+    top: 50%;
+    margin-top: -300px;
+    margin-left: -500px;
+}
+
+
+img.from{
+	right: 6%;
+	max-height: 110%;
+}
+div.from{
+    left: 15%;
+    width: 500px;
+    height: 250px;
+    background: #000000;
+    color: #FFFFFF;
+    opacity: 0.5;
+    padding: 30px;
+    line-height:24pt;
+}
+h1.from{
+	font-size:40px;
+}
+a.link{
+	text-decoration:none;
+	color: #FFFFFF;
+}
+
+img.deck{
+	right: 0px;
+	opacity: 0.1;
+	max-height: 55%;
+}
+
+
+#footer{
+	position: fixed;
+	height: 40px;
+	width: 100%;
+	bottom: 0px;
+	z-index: 40;
+	line-height : 40px;  /*文字垂直置中*/
+}
+.footerback{
+	position: absolute;
+    /* 在footer框中比內容下層 */
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+    background-color: #97ADB9;
+
+	border-style:solid;
+	border-width:1px;
+    border-color:#737373;
+
+	opacity: 0.7;
+}
+
+#menu{
+    float: right;
+	margin: 0px;
+}
+#menu li{
+	display: inline;
+	margin-right: 40px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #214870;
+	text-shadow: 1px 0px 1px #24586C;
+	/* 設定游標的型態 */
+	cursor:pointer;
+}

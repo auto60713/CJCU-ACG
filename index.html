@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ACG研究社</title>
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+	<!-- jquery動畫外掛 -->
+     <link type="text/css" rel="stylesheet" href="main.css" />
+</head>
+<body onload="set()">
+<div id ="footer">
+	<ul id="menu">
+      <li>Top</li>
+      <li>About</li>
+      <li>Video</li>
+      <li>Address</li>
+    </ul>
+    <div class="footerback"></div>
+</div>
+
+	  <img src="img/img01.png" class="head fixed outside">
+    <img src="img/logo.png" class="logo fixed outside">
+    <p class="logo textlight fixed outside">CJCU　ACG研究社</p>
+
+
+	<img src="img/img02.png" class="about outside fixed">
+	<img src="img/stain.png" class="stain outside fixed">
+    <p class="about textlight outside fixed">
+    ACG即Anime、Comics and Games的縮寫，「動畫」、「漫畫」、「遊戲」<br>
+    為華人地區常用之次文化詞彙，特指來自日本的動漫和電子遊戲<br>
+    1995年，台灣的動漫愛好者AIplus在國立中山大學山抹微雲BBS站開設新版面<br>
+    使用「ACG_Review板」作為名稱以代動畫、漫畫、遊戲<br>
+    乃為「ACG」一詞之始<br><br>
+
+    在輕小說改編的動畫、漫畫、遊戲越來越多之際，又衍生出「ACGN」<br>
+    Novels，小說。主要指輕小說（Light Novel）<br>
+    現在ACG所指內容也涵蓋輕小說<br>
+    因此雖有人提出使用ACGN作為該詞的演進說法<br>
+    但實際上絕大多數場合仍在使用ACG<br>
+    </p>
+
+
+    <img src="img/img05.png" class="video outside fixed">
+    <p class="videocont textlight outside fixed">【KDF09】 舞蹈表演</p>
+    <img src="img/video.jpg" class="videoplay outside fixed">
+    <div id="blackback"></div>
+    <iframe width="1000" height="600" src="" frameborder="0" allowfullscreen id="youtube"></iframe>
+
+    <img src="img/deck01.png" class="deck outside fixed">
+
+
+    <img src="img/img08.png" class="from outside fixed">
+    <div class="from outside fixed">
+    <h1 class="from">Information</h1>
+    <p class="from">
+        社辦：學生活動中心二樓(大鏡子第一間)<br>
+        社課時間：每周四晚上七點<br>
+        FB：<a href="https://www.facebook.com/groups/270865019604512" class="link" target="_blank">
+        https://www.facebook.com/groups/270865019604512</a><br>
+        社長：三代<br>
+    </p>
+    </div>
+
+<div id="background"></div>
+</body>
+<script type="text/javascript">
+
+$(window).resize(function(){ set(); });
+$(window).scroll(function(){ set(); });
+
+function set() {
+
+  //抓取卷軸值
+  var scrollval = $(document).scrollTop();
+  //瀏覽器高度
+  var under_line = $(window).height();
+
+  $('body').css( "height", under_line/0.060);
+  $('#background').css( "height", under_line/0.359);
+
+
+    var speed1 = (scrollval/80),
+        speed2 = (scrollval/6),
+        speed3 = (scrollval/5),
+        speed4 = (scrollval/4),
+        speed5 = (scrollval/3),
+        speed6 = (scrollval/2);
+
+  //背景慢移動
+  $('#background').css( "top", -speed1);
+ 
+    //開頭 左圖
+  $('img.head').css( "top", (under_line/14.38)-speed4);
+
+    //開頭 logo
+  $('img.logo').css( "top", (under_line/7.19)-speed4);
+
+    //開頭 title
+  $('p.logo').css( "top", (under_line/1.198)-speed3);
+
+    //第二段 右圖
+  $('img.about').css( "top", under_line+(under_line/14.38)-speed4);
+
+    //第二段 左邊文字
+  $('p.about').css( "top", under_line+(under_line/1.307)-speed5);
+
+    //第二段 stain
+  $('img.stain').css( "top", under_line+(under_line/0.513)-speed6);
+
+    //第三段 初音圖
+  $('img.video').css( "top", under_line+(under_line/1.307)-speed3);
+  $('img.video').css( "opacity", (scrollval-(under_line+(under_line/0.179)))/(under_line/0.719));
+
+    //第三段 右邊文字
+  $('.videocont').css( "top", under_line+(under_line/1.106)-speed3);
+  $('.videocont').css( "opacity", (scrollval-(under_line+(under_line/0.179)))/(under_line/0.719));
+
+    //第三段 影片圖案
+  $('.videoplay').css( "top", under_line+(under_line/0.89)-speed3);
+  $('.videoplay').css( "opacity", (scrollval-(under_line+(under_line/0.179)))/(under_line/0.719));
+
+  //花紋裝飾
+  $('img.deck').css( "top", under_line+(under_line/0.719)-speed2);
+
+    //後段
+  $('img.from').css( "top", under_line+(under_line/0.266)-speed5);
+  $('div.from').css( "top", under_line+(under_line/0.149)-speed6);
+}
+</script>
+
+
+<script type="text/javascript">
+//youtube lightbox
+$( ".videoplay" ).click(function() {
+
+  $(".videoplay").fadeOut(200);
+	$("#blackback").css( "opacity", 0.6 ).fadeIn(200);
+	$("#youtube").fadeIn(200).attr("src","http://www.youtube.com/embed/wDP6yOjDQT0?autoplay=1");;
+});
+
+$( "#blackback" ).click(function() {
+
+    $(".videoplay").fadeIn(200);
+    $("#blackback").fadeOut(200);
+    $("#youtube").fadeOut(200);
+    setTimeout( function(){$("#youtube").attr("src","")} , 200);
+
+});
+</script>
+
+<script type="text/javascript">
+//menu contrl
+
+var scrolllock = false;
+$( "#menu li" ).click(function() {
+
+    var where = $(this).text(),
+        under_line = $(window).height();
+        scrolllock = true;
+
+    switch(where){
+
+      case "Top":
+            goto(0);
+      break;
+      case "About":
+            goto(under_line/0.232);
+      break;
+      case "Video":
+            goto(under_line/0.111);
+      break;
+      case "Address":
+            goto(under_line/0.0685);
+      break;
+    }
+});
+
+function goto(top) {
+
+    $("html, body").stop().animate({scrollTop: top}, 2000, 'easeOutCirc', function(){
+            scrolllock = false;
+    });
+}
+
+//在動畫時禁止滾輪事件
+$(window).bind('mousewheel DOMMouseScroll', function(event){
+   if(scrolllock) return false;
+});
+</script>
+</html>
