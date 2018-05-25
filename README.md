@@ -8,7 +8,6 @@
  * Menu control scrolling
  * Youtube lightbox
  * Motion Design (useing jquery.easing)
- * RWD
 
 ## Libraries
  * jquery-1.10.2.min
